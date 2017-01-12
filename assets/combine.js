@@ -22,3 +22,8 @@ fs.writeFileSync(
   path.resolve(__dirname, 'termList.txt'),
   termList.map(ts => ts.join(',')).join('\n')
 );
+
+fs.writeFileSync(
+  path.resolve(__dirname, 'termList.flat.txt'),
+  termList.map(ts => ts.join(',')).join(',')
+);
