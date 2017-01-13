@@ -1,0 +1,10 @@
+{
+  "name": "personalName",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com> (https://github.com/noriaki)",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio-httpcli": "^0.6.10"
+  }
+}
