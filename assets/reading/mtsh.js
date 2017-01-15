@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const kanjiReadingMapAll = require('./kanjiReadingMapAll');
+const kanjiReadingMapFiltered = require('./kanjiReadingMapFiltered');
 const regexpInitialMTSH = /^[マ-モタ-トサ-ソハ-ホ]/;
 
 const kanjiReadingArrayInitialMTSH =
-        Object.keys(kanjiReadingMapAll).reduce((r, kanji) => {
-          if (kanjiReadingMapAll[kanji].some(yomi => (
+        Object.keys(kanjiReadingMapFiltered).reduce((r, kanji) => {
+          if (kanjiReadingMapFiltered[kanji].some(yomi => (
             regexpInitialMTSH.test(yomi)))) { r.push(kanji); }
           return r;
         }, []);
