@@ -584,6 +584,10 @@ rsvp@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.3.3.tgz#34633caaf8bc66ceff4be3c2e1dffd032538a813"
 
+set-manipulator@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/set-manipulator/-/set-manipulator-0.3.1.tgz#47ecbceae18405058cfcc92c7a1e4d7120916afe"
+
 sntp@1.x.x:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/sntp/-/sntp-1.0.9.tgz#6541184cc90aeea6c6e7b35e2659082443c66198"
