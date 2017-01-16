@@ -12,3 +12,6 @@ jspm_packages
 
 # Temporary
 tmp/
+
+# Destination
+dist/
