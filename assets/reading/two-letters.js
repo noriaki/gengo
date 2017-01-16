@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+const combination = items => items.map(k => (
+  items.map(l => k ===l ? null : k + l).filter(m => !!m)
+));
+
 const kanjiReadingMapFiltered = require('./kanjiReadingMapFiltered');
 
 const kanjiTwoLettersArray =
@@ -9,9 +13,7 @@ const kanjiTwoLettersArray =
         ));
 console.log(`kanjiTwoLettersArray count: ${kanjiTwoLettersArray.length}`);
 
-const wordsTwoLettersArray = kanjiTwoLettersArray.map(k => (
-  kanjiTwoLettersArray.map(l => k ===l ? null : k + l).filter(m => !!m)
-));
+const wordsTwoLettersArray = combination(kanjiTwoLettersArray);
 console.log(`wordsTwoLettersArray count: ${wordsTwoLettersArray.reduce((r, a) => r + a.length, 0)}`);
 
 fs.writeFileSync(
