@@ -4,8 +4,18 @@
   "main": "index.js",
   "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com> (https://github.com/noriaki)",
   "license": "MIT",
+  "scripts": {
+    "clean": "del dist tmp",
+    "mkdir": "node -e '[`dist`,`tmp`].forEach(d => { try { fs.mkdirSync(d) } catch(e) {}})'",
+    "kanji": "run-s kanji:retrieve kanji:merge",
+    "kanji:retrieve": "node lib/01-KanjiCandidates/retrieve.js",
+    "kanji:merge": "node lib/01-KanjiCandidates/merge.js",
+    "prekanji:merge": "run-s clean mkdir"
+  },
   "dependencies": {
     "cheerio-httpcli": "^0.6.10",
+    "del-cli": "^0.2.1",
+    "npm-run-all": "^4.0.0",
     "set-manipulator": "^0.3.1"
   }
 }
