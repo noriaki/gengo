@@ -11,10 +11,10 @@
     "clean": "del dist tmp",
     "mkdir": "node -e '[`dist`,`tmp`].forEach(d => { try { fs.mkdirSync(d) } catch(e) {}})'",
     "lint": "eslint lib",
-    "kanji": "run-s kanji:retrieve kanji:merge",
+    "kanji": "run-s kanji:retrieve kanji:aggregate",
     "kanji:retrieve": "node lib/01-KanjiCandidates/retrieve.js",
-    "kanji:merge": "node lib/01-KanjiCandidates/merge.js",
-    "prekanji:merge": "run-s clean mkdir"
+    "kanji:aggregate": "node lib/01-KanjiCandidates/aggregate.js",
+    "prekanji:aggregate": "run-s clean mkdir"
   },
   "dependencies": {
     "ascii-progress": "^1.0.5",
