@@ -8,13 +8,14 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "clean": "del dist tmp",
-    "mkdir": "node -e '[`dist`,`tmp`].forEach(d => { try { fs.mkdirSync(d) } catch(e) {}})'",
+    "clean": "del dist/*",
+    "mkdir": "node -e 'try { fs.mkdirSync(`dist`) } catch(e) {}'",
+    "setup": "run-s clean mkdir",
     "lint": "eslint lib",
-    "kanji": "run-s kanji:retrieve kanji:aggregate",
+    "kanji": "run-s kanji:retrieve kanji:perform",
     "kanji:retrieve": "node lib/01-KanjiCandidates/retrieve.js",
-    "kanji:aggregate": "node lib/01-KanjiCandidates/aggregate.js",
-    "prekanji:aggregate": "run-s clean mkdir",
+    "kanji:perform": "node lib/01-KanjiCandidates/perform.js",
+    "prekanji:perform": "run-s mkdir",
     "gengo": "run-s gengo:retrieve gengo:aggregate",
     "gengo:retrieve": "node -r async-to-gen/register lib/02-GengoCandidates/retrieve.js",
     "gengo:aggregate": "node lib/02-GengoCandidates/aggregate.js"
