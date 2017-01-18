@@ -14,7 +14,10 @@
     "kanji": "run-s kanji:retrieve kanji:aggregate",
     "kanji:retrieve": "node lib/01-KanjiCandidates/retrieve.js",
     "kanji:aggregate": "node lib/01-KanjiCandidates/aggregate.js",
-    "prekanji:aggregate": "run-s clean mkdir"
+    "prekanji:aggregate": "run-s clean mkdir",
+    "gengo": "run-s gengo:retrieve gengo:aggregate",
+    "gengo:retrieve": "node -r async-to-gen/register lib/02-GengoCandidates/retrieve.js",
+    "gengo:aggregate": "node lib/02-GengoCandidates/aggregate.js"
   },
   "dependencies": {
     "ascii-progress": "^1.0.5",
