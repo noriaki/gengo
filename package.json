@@ -17,6 +17,7 @@
     "prekanji:merge": "run-s clean mkdir"
   },
   "dependencies": {
+    "ascii-progress": "^1.0.5",
     "async-to-gen": "^1.3.0",
     "cheerio-httpcli": "^0.6.10",
     "del-cli": "^0.2.1",
