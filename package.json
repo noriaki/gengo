@@ -1,7 +1,6 @@
 {
   "name": "personalName",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "1.0.0",
   "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com> (https://github.com/noriaki)",
   "license": "MIT",
   "engines": {
