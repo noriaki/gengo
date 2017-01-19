@@ -1,0 +1,38 @@
+{
+  "name": "personalName",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com> (https://github.com/noriaki)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "clean": "del dist/* tmp/*",
+    "mkdir" : "node -e '[`dist`,`tmp`].forEach(d => { try { fs.mkdirSync(d) } catch(e) {}})'",
+    "setup": "run-s clean mkdir",
+    "lint": "eslint lib",
+    "kanji:retrieve": "node lib/01-KanjiCandidates/retrieve.js",
+    "kanji:perform": "node lib/01-KanjiCandidates/perform.js",
+    "gengo:retrieve": "node -r async-to-gen/register lib/02-GengoCandidates/retrieve.js",
+    "gengo:aggregate": "node lib/02-GengoCandidates/aggregate.js",
+    "gengo:perform": "node lib/02-GengoCandidates/perform.js",
+    "retrieve": "run-s kanji:retrieve gengo:retrieve",
+    "aggregate": "run-s gengo:aggregate",
+    "perform": "run-s kanji:perform gengo:perform",
+    "preperform": "run-s clean mkdir",
+    "start": "run-s aggregate perform"
+  },
+  "dependencies": {
+    "ascii-progress": "^1.0.5",
+    "async-to-gen": "^1.3.0",
+    "cheerio-httpcli": "^0.6.10",
+    "del-cli": "^0.2.1",
+    "npm-run-all": "^4.0.0",
+    "set-manipulator": "^0.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-plugin-node": "^3.0.5"
+  }
+}
